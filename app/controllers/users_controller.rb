@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(params[:wiki])
-    authorize @wiki
+    @user = User.new(params[:user])
+
     if @user.save
       flash[:notice] = "User was saved successfully."
       redirect_to @user
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(params[:wiki])
+    if @user.update_attributes(params[:user])
       flash[:notice] = "User was updated"
       redirect_to @user
     else
