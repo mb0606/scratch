@@ -1,0 +1,4 @@
+= form_for wiki do |f|
+  = f.text_field :subject, class: "title"
+  = f.text_area :description, rows: 20, class: "body"
+  = f.submit "Save", class: 'btn'

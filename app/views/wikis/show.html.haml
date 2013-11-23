@@ -1,0 +1,8 @@
+%h1= @wiki.subject
+  %p= @wiki.body
+  %small
+
+    = link_to "Edit", edit_wiki_path(@wiki), class: 'button' if @user.wikis.exists?(@wikis) 
+  = link_to "Delete wiki", @wiki, method: :delete, class: 'button',confirm: 'Are you sure you want to delete this?' if user.wikis.exist?(@wikis) 
+  %br
+    

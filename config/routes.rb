@@ -1,4 +1,8 @@
 Scratchpad::Application.routes.draw do
+
+  resources :users
+
+  resources :wikis
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

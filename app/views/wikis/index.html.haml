@@ -1,0 +1,11 @@
+ %h1 Wikis
+
+
+  -@wikis.each do |wiki|
+    %h4
+      = link_to wiki.subject, wiki
+      %small= link_to "Edit", edit_wiki_path(wiki) if @user.@wikis.exists?(@wikis)
+  
+
+  -if policy(Wiki.new).create?
+    = link_to "New Wiki", new_wiki_path, class: 'button'

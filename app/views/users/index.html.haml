@@ -1,0 +1,13 @@
+%h1 USERS
+
+
+  -@user.each do |user|
+    %h4
+      = link_to user.name, user
+      - user.wikis.each do |wiki|
+        = link_to wiki.title, wiki_path(wiki)
+        %small
+        Working on
+      = user.wikis.count
+= link_to "Create Wiki", new_wiki_path
+  
